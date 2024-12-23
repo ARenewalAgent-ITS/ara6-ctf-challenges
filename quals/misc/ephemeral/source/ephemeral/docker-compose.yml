@@ -1,0 +1,9 @@
+services:
+  ephemeral:
+    image: hanzceo/verifiyer:0.1.0
+    environment:
+      - FLAG=ARA6{sh0u7_out_70_3ph3me24l_prov1d3r5}
+      - SETUP_ADDRESS=0xE929dbB995Ab84d54d5803657Ec984fA78A4AB9f
+      - PORT=13378
+    ports:
+      - "13378:13378"
