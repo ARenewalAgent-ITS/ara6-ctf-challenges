@@ -1,5 +1,6 @@
 # ephemeral POC
 
+0. Get 32 ETH from ephemery testnet faucet
 1. Register challenge using cast
 ```
 cast send --chain 39438141 --private-key 0x... --rpc-url http://... SETUP_ADDR "register()"
