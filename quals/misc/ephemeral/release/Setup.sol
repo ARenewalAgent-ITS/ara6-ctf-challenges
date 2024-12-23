@@ -7,23 +7,19 @@ interface IChallenge {
 }
 
 contract Setup {
-	address public owner;
-	mapping(address => address) public playersInstanceMapping;
+	address public player;
+	address public challenge;
 
-	constructor() {
-		owner = msg.sender;
+	constructor(address _player) payable {
+		player = _player;
+		
+		payable(player).transfer(msg.value);
+		
+		// Challenge deployment
+		challenge = address(new Challenge());
 	}
 
-	function register() external payable {
-		require(playersInstanceMapping[msg.sender] == address(0), "Already registered");
-		playersInstanceMapping[msg.sender] = address(new Challenge());
-	}
-
-	function getChallenge() external view returns (address) {
-		return playersInstanceMapping[msg.sender];
-	}
-
-	function isSolved(address player) external view returns (bool) {
-		return IChallenge(playersInstanceMapping[player]).owner() == player;
+	function isSolved() external view returns (bool) {
+		return IChallenge(challenge).owner() == player;
 	}
 }
