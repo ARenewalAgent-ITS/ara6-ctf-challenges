@@ -2,7 +2,7 @@
 
 ## Author
 
-Revprm
+revprm
 
 ## Difficulty
 
