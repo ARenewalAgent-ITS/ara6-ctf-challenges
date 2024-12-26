@@ -36,6 +36,9 @@ app.post("/process", uploader.single("qrnote"), async (req, res) => {
     const note = sanitize(raw);
 
     // idk why need this, but maybe it's will enhance the security
+    if (note.includes("//")) {
+      return res.status(400).send("Note maybe not safe");
+    }
     const links = parseLinks(note);
     if (links) {
       const isSafe = await validateXSSContent(...links);
