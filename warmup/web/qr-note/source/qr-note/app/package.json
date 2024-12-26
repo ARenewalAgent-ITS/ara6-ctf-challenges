@@ -1,0 +1,21 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "isomorphic-dompurify": "^2.11.0",
+    "multer": "^1.4.5-lts.1",
+    "qrnode": "^0.1.0",
+    "simple-get": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

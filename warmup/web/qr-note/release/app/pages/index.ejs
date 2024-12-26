@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note QR</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <main
+      class="my-5 flex justify-center items-center h-screen flex-col gap-10"
+    >
+      <div class="text-center space-y-3">
+        <h1 class="text-3xl font-bold">Note QR</h1>
+        <p class="max-w-xl">
+          Create your own note, but it's not just a normal note, we make it more
+          interactive, so you can share your note by uploading your QR code.
+        </p>
+      </div>
+      <form
+        action="process"
+        enctype="multipart/form-data"
+        method="POST"
+        class="shadow border w-full max-w-xl p-10 rounded-xl space-y-2"
+      >
+        <input
+          type="file"
+          accept="image/*"
+          name="qrnote"
+          class="border border-gray-300 w-full p-5 rounded-lg bg-gray-100"
+        />
+        <button
+          type="submit"
+          class="w-full rounded-lg border border-indigo-600 bg-indigo-600 px-12 py-3 text-sm font-medium text-white hover:bg-indigo-700"
+        >
+          Let's Go
+        </button>
+      </form>
+    </main>
+  </body>
+</html>
