@@ -1,0 +1,35 @@
+services:
+  proxy:
+    image: nginx:latest
+    ports:
+      - 1337:80
+    volumes:
+      - ./proxy.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - qrnote
+    depends_on:
+      - bot
+      - app
+  app:
+    build: app
+    networks:
+      - qrnote
+  bot:
+    build:
+      context: bot
+      args:
+        - BROWSER=chromium
+    restart: always
+    environment:
+      APPNAME: Admin
+      APPURL: http://proxy/
+      APPURLREGEX: ^.*$
+      APPFLAG: ARA6{...}
+      APPLIMIT: 5
+      APPLIMITTIME: 60
+      USE_PROXY: 1
+    networks:
+      - qrnote
+
+networks:
+  qrnote:
