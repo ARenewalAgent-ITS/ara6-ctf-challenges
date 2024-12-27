@@ -13,7 +13,7 @@
 | IDK                           | idzoyy              | Easy       | Crypto   |
 | ............................. | ................... | Hard       | Crypto   |
 | script-kiddies                | idzoyy              | Medium     | Crypto   |
-| ............................. | ................... | Medium     | Reverse  |
+| Simple-Math                   | Haalloobim          | Easy       | Reverse  |
 | ............................. | ................... | Hard       | Reverse  |
 | ............................. | ................... | Hard       | Reverse  |
 | Readable                      | revprm              | Easy       | Forensic |
