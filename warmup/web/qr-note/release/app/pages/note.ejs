@@ -15,15 +15,6 @@
     <main
       class="my-5 flex justify-center items-center h-screen flex-col gap-10"
     >
-      <div class="w-full shadow rounded-xl max-w-3xl p-10 bg-yellow-50/30">
-        <h3 class="text-xl font-bold">Quote of the day</h3>
-        <p
-          hx-get="/quote"
-          hx-trigger="load"
-          hx-swap="innerHTML"
-          hx-vals="content"
-        ></p>
-      </div>
       <div class="w-full shadow rounded-xl max-w-3xl p-10">
         <h3 class="text-xl font-bold">Your note</h3>
         <%- note %>

@@ -20,12 +20,6 @@ app.get("/", (_, res) => {
   res.render("index");
 });
 
-app.get("/quote", async (_, res) => {
-  res.setHeader("Content-Type", "text/plain");
-  const quote = "awali pagimu dengan semangat! anjayy!!!!";
-  res.send(quote.content);
-});
-
 app.post("/process", uploader.single("qrnote"), async (req, res) => {
   if (!req.file) {
     return res.status(400).send("No file uploaded.");
