@@ -1,0 +1,57 @@
+doctype html
+html
+  head
+    title Hello World App
+    style.
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      h1 {
+        color: #4CAF50;
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 30px;
+      }
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      a:hover {
+        background-color: #45a049;
+      }
+
+      img {
+        margin-top: 20px;
+        max-width: 80%;
+        height: auto;
+      }
+
+  body
+    h1 Hello world!
+    p Welcome to the application.
+    a(href='/register') Register
+    a(href='/login') Login
+    img(src='https://www.dewaweb.com/app/views/MediaKit/2018.05.03.1/assets/img/basic-horizontal-logo-dewaweb-expert-preview.png', alt='Dewaweb')

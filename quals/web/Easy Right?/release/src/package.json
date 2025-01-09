@@ -1,0 +1,19 @@
+{
+  "name": "my-express-app",
+  "version": "1.0.0",
+  "description": "An Express.js web application with user registration, login, profile editing, and role-based access control",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.4",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.1.0",
+    "pug": "^3.0.2"
+  },
+  "author": "Your Name",
+  "license": "ISC"
+}

@@ -1,0 +1,26 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 64bcb736296d81b145bdc8b80688084d
+      MYSQL_DATABASE: user_db
+      MYSQL_USER: St1k0MBali345
+      MYSQL_PASSWORD: d440aed189a13ff970dac7e7e8f987b2
+    volumes:
+      - ./src/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  app:
+    build: .
+    container_name: express-app
+    restart: always
+    ports:
+      - "21291:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: St1k0MBali345
+      DB_PASSWORD: d440aed189a13ff970dac7e7e8f987b2
+      DB_NAME: user_db

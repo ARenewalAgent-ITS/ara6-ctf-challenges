@@ -1,0 +1,88 @@
+doctype html
+html
+  head
+    title Register
+    style.
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      label {
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      input[type='text'],
+      input[type='password'] {
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      p {
+        margin-top: 10px;
+      }
+
+      a {
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+  body
+    h1 Register
+    form(method='POST', action='/register')
+      label(for='username') Username:
+      input(type='text', name='username', required)
+      br
+      label(for='password') Password:
+      input(type='password', name='password', required)
+      br
+      button(type='submit') Register
+    p
+      a(href='/login') Already have an account? Login here.

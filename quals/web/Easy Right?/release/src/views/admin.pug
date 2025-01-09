@@ -1,0 +1,52 @@
+doctype html
+html
+  head
+    title Admin Page
+    style.
+      body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      h1 {
+        color: #FF5722;
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: #333;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: white;
+        background-color: #FF5722;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      a:hover {
+        background-color: #E64A19;
+      }
+  body
+    h1 Hello world from the Admin Page!
+    p Welcome, Admin! You have access to this protected area.
+    a(href='/logout') Logout
