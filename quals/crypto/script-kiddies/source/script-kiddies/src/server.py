@@ -6,7 +6,7 @@ from zlib import crc32
 import hashlib
 import os
 
-FLAG = b"ARA6{welcome_to_the_party!!waittt,you're_invited???}"
+FLAG = b"ARA6{welcome_to_Radhit's_party!!waittt,you're_invited???}"
 KEY = token_bytes(32)
 
 def verification(key,data):
