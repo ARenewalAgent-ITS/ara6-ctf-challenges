@@ -10,8 +10,8 @@ hard?
 
 ## Description
 
-I think I made a bad generator so it takes a little more time, but I think it's safer. I have prepared a place for you to prove it
-notes: try reconnecting if there is no response
+I think I make a bad generator so it takes a little more time, this seems annoying for someone who wants to leak my flag. I have prepared a place for you to prove it
+notes: try reconnecting if there is no response around 10s
 
 ## Flag
 
