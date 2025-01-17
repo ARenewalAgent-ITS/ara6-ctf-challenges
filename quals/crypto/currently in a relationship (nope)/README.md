@@ -6,7 +6,7 @@ Etern1ty
 
 ## Difficulty
 
-Medium
+Medium-Hard
 
 ## Description
 

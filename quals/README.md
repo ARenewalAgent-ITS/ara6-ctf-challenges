@@ -11,7 +11,7 @@
 | ............................. | ................... | Easy       | Pwn      |
 | ............................. | ................... | Medium     | Pwn      |
 | IDK                           | idzoyy              | Easy       | Crypto   |
-| ............................. | ................... | Hard       | Crypto   |
+| currently in a relationship (nope) | etern1tydark   | Hard       | Crypto   |
 | script-kiddies                | idzoyy              | Medium     | Crypto   |
 | Simple-Math                   | Haalloobim          | Easy       | Reverse  |
 | ............................. | ................... | Hard       | Reverse  |
