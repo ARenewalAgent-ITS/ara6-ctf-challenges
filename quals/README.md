@@ -14,7 +14,7 @@
 | currently in a relationship (nope) | etern1tydark   | Hard       | Crypto   |
 | script-kiddies                | idzoyy              | Medium     | Crypto   |
 | Simple-Math                   | Haalloobim          | Easy       | Reverse  |
-| ............................. | ................... | Hard       | Reverse  |
+| memory                        | thehxnz             | Medium     | Reverse  |
 | ............................. | ................... | Hard       | Reverse  |
 | Readable                      | revprm              | Easy       | Forensic |
 | ............................. | ................... | Medium     | Forensic |
