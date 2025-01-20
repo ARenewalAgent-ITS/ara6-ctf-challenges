@@ -1,4 +1,4 @@
-# Qualifications
+# Finals
 
 > Untuk author gunakan username Discord
 
