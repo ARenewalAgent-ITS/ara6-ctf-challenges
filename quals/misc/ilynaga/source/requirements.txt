@@ -1,0 +1,7 @@
+deepface
+scikit-image
+transformers
+gradio
+pillow
+tf-keras
+torch
