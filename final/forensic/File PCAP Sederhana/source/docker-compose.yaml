@@ -1,0 +1,6 @@
+services:
+  app:
+    build: .
+    container_name: phpfuck
+    ports:
+      - "8181:8080"
