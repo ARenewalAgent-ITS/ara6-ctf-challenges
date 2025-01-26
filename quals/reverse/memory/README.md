@@ -10,10 +10,10 @@ Medium
 
 ## Description
 
-In memory of easily reversible binary. Present, I am to you, this.
+I learned memory-safe programming language. I am safe right?
 
 ## Flag
 
 ```
-ARA6{51x_t3n}
+ARA6{@ABCDEFGHIJKLMNABCDEFGHIJKLMNOBCDEFGHIJKLMNOPCDEFGHIJKLMNOPQD}
 ```
