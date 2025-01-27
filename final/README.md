@@ -14,5 +14,5 @@
 | ............................. | ................... | Hard       | Reverse  |
 | Kena Sial Karena Sang Naga    | Haalloobim          | Hard       | Forensic |
 | File PCAP Sederhana           | daff112             | Hard       | Forensic |
-| ............................. | ................... | Hard       | Misc     |
+| audit                         | thehxnz             | Hard       | Misc     |
 | ............................. | ................... | Hard       | Misc     |
