@@ -13,6 +13,6 @@
 | ............................. | ................... | Hard       | Reverse  |
 | ............................. | ................... | Hard       | Reverse  |
 | Kena Sial Karena Sang Naga    | Haalloobim          | Hard       | Forensic |
-| ............................. | ................... | Hard       | Forensic |
+| File PCAP Sederhana           | daff112             | Hard       | Forensic |
 | ............................. | ................... | Hard       | Misc     |
 | ............................. | ................... | Hard       | Misc     |

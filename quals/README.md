@@ -18,7 +18,7 @@
 | ............................. | ................... | Hard       | Reverse  |
 | Readable                      | revprm              | Easy       | Forensic |
 | What Shark?                   | pujoganteng         | Medium     | Forensic |
-| ............................. | ................... | Hard       | Forensic |
+| Daftar Kerja                  | daff112             | Hard       | Forensic |
 | ephemeral                     | thehxnz             | Easy       | Misc     |
 | ............................. | ................... | Hard       | Misc     |
 | ilynaga                       | kek.c               | Hard       | Misc     |
