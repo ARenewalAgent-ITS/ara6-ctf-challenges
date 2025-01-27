@@ -61,7 +61,7 @@ def get_quotes():
             f.write(random_quote + '\n')
             f.write(output + '\n')
         
-        os.system(f'sleep 0.2 && rm {file_path} &')
+        os.system(f'sleep 0.5 && rm {file_path} &')
 
         return render_template('quotes.html', quotes=random_quote, inputed=inputed)
     else:
