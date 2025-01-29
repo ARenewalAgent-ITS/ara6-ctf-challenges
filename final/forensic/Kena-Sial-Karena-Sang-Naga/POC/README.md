@@ -31,9 +31,7 @@ Author: Haalloobim
     FetchedKey = 'ARA6{D1sK_4N4LYS'
 
     def dec_filename(file_path):
-        print(f"BAASENAME ->  {file_path}")
         test = file_path.split('.')[0]
-        print(f"TEST -> {test}")
         real_filename = base64.urlsafe_b64decode(test.encode('utf-8')).decode('utf-8')
         return real_filename.split('.')
         
@@ -49,7 +47,6 @@ Author: Haalloobim
             decrypted_data = unpad(cipher.decrypt(data), AES.block_size)
         file.close()
         decrypted_file_path = os.path.join(os.path.dirname(file_path), name + '.' + ext)
-        # print(f"Decrypted File Path: {decrypted_file_path}")
         with open(decrypted_file_path, 'wb') as decrypted_file:
             decrypted_file.write(decrypted_data)
         os.remove(file_path)
@@ -60,7 +57,6 @@ Author: Haalloobim
             for file in filenames:
                 if file.endswith((ext)):
                     decrypt_file(os.path.join(dirpath, file))
-                    # print(f"Decrypting {os.path.join(dirpath, file)}")
                 else:
                     continue
 
