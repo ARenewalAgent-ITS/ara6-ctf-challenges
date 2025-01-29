@@ -17,3 +17,5 @@ To Do List yang harus dilakukan setelah melakukan deploy challenge, yaitu menggu
     iptables -A OUTPUT -p tcp --sport 5000 -j ACCEPT
     iptables -P OUTPUT DROP
     ```
+## Flag
+ARA6{Raden_Banter_is_SPEEEEEEEED_SUIIIIIIIIII}
