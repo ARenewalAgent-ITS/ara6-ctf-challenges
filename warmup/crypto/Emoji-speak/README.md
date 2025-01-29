@@ -12,7 +12,7 @@ Easy
 
 The Emoji Movie is my favorite movie of all time because one of the character is a 1337 girl hacker princess. I love this movie so much that i decided to replace all the (important) keys in my keyboard with emojis.
 
-![emojiboard](/release/LEET%20KEYBOARD.png)
+![emojiboard](release/LEET%20KEYBOARD.png)
 
 🧢😤😥😤🧢6️⃣💩🌚🧢😍🧢💩🐸🧢😔😍🤓😋🧢💩🐸🤒🤔🤓💩🐸🤓😓🤕🤣😍💩🐸😓🤕🤮😍🤓💩🐸🤧🙃😣😘🤧💩🐸😷🤕💩🐸😨😤🤒😣🤔💩🐸😘🙃😡😷💩🐸🤑🙃💩🐸😌😤😡😋😤💩🐸😍😡🤧🤒🤓😤😋💩🐸😎🤒😨💩🐸😨🤓😔😣🤕😓🤓💩🐸🤒🤕💩🐸🧢😤😥😤🧢💩🐸6️⃣💩🐸0️⃣💩🐸🧢😣🤒🤑🧢💩🌝
 
