@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ user.name }} Note</title>
+    <link href="https://fonts.cdnfonts.com/css/itc-caslon-224-std" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'ITC Caslon 224 Std', sans-serif;
+        }
+        #notes{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .note{
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        a:visited, a:link, a:active{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ user.name }} Note</h1>
+    <div id="notes">
+    {% for note in notes %}
+        <div class="note">
+            <a href="/usuario/note/getnote/{{ note.uuid }}"><h3>{{ note.title }}</h3></a>
+        </div>
+    {% else %}
+        <h2>No notes found</h2>
+    {% endfor %}
+    </div>
+</body>
+</html>

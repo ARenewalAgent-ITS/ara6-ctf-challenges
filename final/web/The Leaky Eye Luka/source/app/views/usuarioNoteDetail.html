@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.2.3/purify.min.js" nonce="{{ nonce }}"></script>
+        <link href="https://fonts.cdnfonts.com/css/itc-caslon-224-std" rel="stylesheet">
+        <title>Note Detail</title>
+        <style>
+            body {
+                font-family: 'ITC Caslon 224 Std', sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url('/img/crimson_bg.png');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+
+            #note {
+                width: 80%;
+                max-width: 600px;
+                padding: 20px;
+                background-color: #ffffff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            #note-title {
+                font-size: 1.5rem;
+                font-weight: bold;
+                margin-bottom: 10px;
+                color: #333;
+            }
+
+            #note-content {
+                font-size: 1rem;
+                line-height: 1.5;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="note">
+            <div id="note-title"></div>
+            <div id="note-content"></div>
+        </div>
+    </body>
+    <script nonce="{{ nonce }}">
+        (async function main(){
+            await getNote();
+        })();
+
+        async function getNote() {
+            const url = "/api/usuario/note/{{ uuid }}";
+            const response = await fetch(url);
+            const responseJson = await response.json();
+            const titleBlock = document.getElementById("note-title");
+
+            const { note } = responseJson;
+
+            const sanitizedTitle = DOMPurify.sanitize(sanitizeDuarDuar(note.title), { 
+                ADD_TAGS: ["iframe", "a", "input", "form", "div", "html", "base"], 
+                ADD_ATTR: ["allow", "allowfullscreen", "frameborder", "scrolling", "srcdoc", "src"]
+            });
+
+            titleBlock.innerHTML = sanitizedTitle;
+
+            setTimeout(() => {
+                setContent(note.content);
+            }, 500);
+        }
+
+        function sanitizeDuarDuar(data) {
+            const re = /<\s*(input|form|div|html|script|img|audio|dialog)[^>]*>/gi;
+            return data.replace(re, "");
+        }
+
+        function setContent(content) {
+            const noteBlock = document.getElementById("note-content");
+            const sanitizedContent = DOMPurify.sanitize(content);
+            noteBlock.innerHTML = sanitizedContent;
+            const successScript = document.createElement("script");
+            try{
+                if(window.isClean.isSafe.isSanitized) {
+                    successScript.src = "./js/success.js";
+                    successScript.onload = () => report();
+                }
+            }catch{
+                successScript.src = "/js/success.js";
+                successScript.onload = () => report();
+            }
+            document.head.appendChild(successScript);
+        }
+    </script>
+</html> 

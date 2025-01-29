@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  bot:
+    restart: always
+    container_name: bot
+    environment:
+      - SECRET_KEY=e1b9f6aef31c4b3cb1c2c946f79d8f2a1a5c3e4d8e6f7c8a9b0d1e2f3g4h5i6j
+      - PORT=3000
+      - APP_URL=http://noteapp:6969
+    depends_on:
+      - noteapp
+    build:
+      context: bot
+    networks:
+      - internal
+
+  noteapp:
+    container_name: noteapp
+    build:
+      context: app
+    restart: always
+    environment:
+      SECRET_KEY: e1b9f6aef31c4b3cb1c2c946f79d8f2a1a5c3e4d8e6f7c8a9b0d1e2f3g4h5i6j
+      FLAG: luc4-k33p-l3ak1ng-h1s-n0t3s-w1th-t34rs
+    ports:
+      - 6969:6969
+    networks:
+      - internal
+  
+networks:
+  internal:
+

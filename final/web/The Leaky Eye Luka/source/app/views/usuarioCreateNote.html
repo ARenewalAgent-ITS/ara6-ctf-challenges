@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Usuario Note</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('/img/stardust_bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #user-form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        #title {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        #content {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            height: 100px;
+        }
+
+        #create-note {
+            padding: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form id="user-form">
+            <input type="text" id="title" name="title" placeholder="Title">
+            <textarea id="content" name="content" placeholder="Content"></textarea>
+            <button id="create-note" type="submit">Create Note</button>
+        </form>
+    </div>
+    <script src="/js/createNote.js"></script>
+</body>
+</html>
