@@ -5,8 +5,8 @@
 | Name                          | Author              | Difficulty | Category |
 | ----------------------------- | ------------------- | ---------- | -------- |
 | QR Note                       | rootkids            | Medium     | Web      |
-| mandatory flag checker        | ................... | Easy       | Pwn      |
-| Emoji-speak                   | ................... | Easy       | Crypto   |
+| mandatory flag checker        | honque              | Easy       | Pwn      |
+| Emoji-speak                   | honque              | Easy       | Crypto   |
 | ............................. | ................... | Easy       | Reverse  |
 | Tantangan si bos              | GhostNetsh          | Easy       | Forensic |
-| those who know 💀             | ................... | Easy       | Misc     |
+| those who know 💀             | honque              | Easy       | Misc     |
