@@ -8,7 +8,7 @@
 | El Kebanteren                 | abdiery             | Medium     | Web      |
 | Easy Right?                   | daff112             | Hard       | Web      |
 | ............................. | ................... | Easy       | Pwn      |
-| ............................. | ................... | Easy       | Pwn      |
+| That Day I Got Reincarnated to Window's Isekai as Yet Another BabyPwn Challenge | [__hygge](https://github.com/HyggeHalcyon) | Medium     | Pwn      |
 | ............................. | ................... | Medium     | Pwn      |
 | IDK                           | idzoyy              | Easy       | Crypto   |
 | currently in a relationship (nope) | etern1tydark   | Hard       | Crypto   |

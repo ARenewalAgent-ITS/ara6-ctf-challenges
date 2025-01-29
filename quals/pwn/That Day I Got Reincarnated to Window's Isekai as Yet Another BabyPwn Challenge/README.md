@@ -2,7 +2,7 @@
 
 ## Author
 
-__hygge
+[__hygge](https://github.com/HyggeHalcyon)
 
 ## Difficulty
 
@@ -10,7 +10,9 @@ Medium
 
 ## Description
 
-flag is in `C:\key.txt`
+Please watch [Hai to Gensou no Grimgar](https://myanimelist.net/anime/31859/Hai_to_Gensou_no_Grimgar), I swear it's peak.
+
+flag is in `key.txt`
 
 ## Flag
 
