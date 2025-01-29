@@ -1,0 +1,7 @@
+services:
+  pwn-warmup:
+    build: .
+    ports:
+      - "2001:1337"
+    restart: unless-stopped
+    container_name: pwn-warmup

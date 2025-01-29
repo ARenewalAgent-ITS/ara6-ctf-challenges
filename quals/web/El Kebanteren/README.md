@@ -1,10 +1,10 @@
 # El Kebanteren
 
 ## Deskripsi
-Prabu Negronegoro I adalah raja yang bijaksana dan adil, dihormati oleh rakyatnya karena kepemimpinannya yang tegas namun penuh kasih. Ia dikenal karena kemampuannya mendengarkan suara rakyat dan membuat keputusan yang bijak dalam memimpin kerajaan yang subur dan makmur. Putranya, Raden Banter, mewarisi sifat-sifat ayahnya, penuh semangat dan ambisi untuk membawa perubahan yang lebih baik bagi kerajaan, menjadikannya sosok yang diharapkan dapat melanjutkan legasi kebijaksanaan dan keberanian Prabu Negronegoro I.
+Prabu Banter I adalah raja yang bijaksana dan adil, dihormati oleh rakyatnya karena kepemimpinannya yang tegas namun penuh kasih. Ia dikenal karena kemampuannya mendengarkan suara rakyat dan membuat keputusan yang bijak dalam memimpin kerajaan yang subur dan makmur. Putranya, Raden Banter II, mewarisi sifat-sifat ayahnya, penuh semangat dan ambisi untuk membawa perubahan yang lebih baik bagi kerajaan, menjadikannya sosok yang diharapkan dapat melanjutkan legasi kebijaksanaan dan keberanian Prabu Banter I.
 
 ## Author
-abdieryy
+abdiery
 
 ## To Do ⚠
 
@@ -38,7 +38,7 @@ Untuk melakukan bypass, kita bisa menggunakan payload seperti berikut:
 
 `s=s; l&s` == `ls`
 
-Bila ingin melakukan listing directory, karena terdapat sleep sebesar 0.1 detik sebelum output file dihapus kita bisa menggunakan threading.
+Bila ingin melakukan listing directory, karena terdapat sleep sebesar 0.5 detik sebelum output file dihapus kita bisa menggunakan threading.
 
 Sehingga didapat solver berikut:
 
