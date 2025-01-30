@@ -10,7 +10,7 @@ Hard
 
 ## Description
 
-A new bug bounty program has been launched!
+A new bug bounty program has been launched! They have $0 TVL tho
 
 ## Flag
 ```
