@@ -1,0 +1,8 @@
+name: pwn-mentor
+services:
+  pwn-mentor:
+    build: .
+    ports:
+      - "2001:1337"
+    restart: unless-stopped
+    container_name: pwn-mentor
