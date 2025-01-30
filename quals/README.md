@@ -4,7 +4,7 @@
 
 | Name                          | Author              | Difficulty | Category |
 | ----------------------------- | ------------------- | ---------- | -------- |
-| ............................. | ................... | Easy       | Web      |
+| Intuition Test                | jac                 | Easy       | Web      |
 | El Kebanteren                 | abdiery             | Medium     | Web      |
 | Easy Right?                   | daff112             | Hard       | Web      |
 | ............................. | ................... | Easy       | Pwn      |
@@ -15,7 +15,7 @@
 | script-kiddies                | idzoyy              | Medium     | Crypto   |
 | Simple-Math                   | Haalloobim          | Easy       | Reverse  |
 | memory                        | thehxnz             | Medium     | Reverse  |
-| ............................. | ................... | Hard       | Reverse  |
+| Gambit Scheme                 | jjcho               | Hard       | Reverse  |
 | Readable                      | revprm              | Easy       | Forensic |
 | What Shark?                   | pujoganteng         | Medium     | Forensic |
 | Daftar Kerja                  | daff112             | Hard       | Forensic |
