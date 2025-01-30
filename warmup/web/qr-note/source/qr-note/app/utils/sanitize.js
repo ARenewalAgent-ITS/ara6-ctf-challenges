@@ -10,10 +10,13 @@ function sanitize(raw) {
 }
 
 function parseLinks(content) {
-  return content.match(/https?:\/\/[^\s"'<>]+/g);
+  return content.match(/(?:https?:)?\/\/[^\s"'<>]+/g);
 }
 
 async function validateXSSContent(...links) {
+  if (links.some((l) => l.startsWith("//"))) {
+    return false;
+  }
   let allcontent = "";
   for (const link of links) {
     const res = await axios.get(link);
