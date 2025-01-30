@@ -28,7 +28,7 @@ function exploit(payload){
             length+=1;
         }
     }
-    let chars = "}-{abcdefghijklmnopqrstuvwxyz1234567890"
+    let chars = "-abcdefghijklmnopqrstuvwxyz1234567890"
     let flag = ""
     while(flag.length < length-1){
         for (const ch of chars){

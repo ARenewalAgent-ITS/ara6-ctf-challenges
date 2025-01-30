@@ -61,7 +61,8 @@ async function visit(note,role) {
 			name: 'passion_ticket',
 			value: cookie,
 			domain: new URL(APP_URL).hostname,
-            httponly: false
+            httpOnly: (role === "Secretaria" ? false : true),
+            sameSite: 'strict'
 		});
         await page.goto(urlvisit)
         await sleep(3*60*1000)
