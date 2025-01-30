@@ -20,4 +20,4 @@
 
 > For easier time in tracing back the code steps, just use the given program functions to solve it. If you want you could just try it one by one using brute force to get the proper answer from the obfuscation. But, it's easier to edit the program by changing little things here and there and the run the program to get the flag.
 
-**Check my solution at [solve.cpp](./solve.cpp) to see how I did it
+**Check my solution at [solve.cpp](./solve.cpp) to see how I did it**
