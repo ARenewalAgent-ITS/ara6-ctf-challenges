@@ -21,5 +21,5 @@
 | What Shark?                   | pujoganteng         | Medium     | Forensic |
 | Daftar Kerja                  | daff112             | Hard       | Forensic |
 | ephemeral                     | thehxnz             | Easy       | Misc     |
-| ............................. | ................... | Hard       | Misc     |
+| GeoGuessr-Pro                 | nblirwn             | Medium     | Misc     |
 | ilynaga                       | kek.c               | Hard       | Misc     |
