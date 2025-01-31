@@ -18,13 +18,15 @@ gdal2tiles adalah tools untuk mengubah file .tif menjadi tile layer (tile-output
 So, konversi ```gdal_translate -of GTiff original-modified.png original-modified.tif```
 
 User perlu mengecek informasi mengenai file .tif ini, ```gdalinfo original-modified.tif```
-Problem: ```
+Problem: 
+```
 Corner Coordinates:
 Upper Left  (  -0.5000000,   0.5000000) (  0d30' 0.00"W,  0d30' 0.00"N)
 Lower Left  (      -0.500,   -1956.500) (  0d30' 0.00"W,Invalid angle)
 Upper Right (    2928.500,       0.500) (Invalid angle,  0d30' 0.00"N)
 Lower Right (    2928.500,   -1956.500) (Invalid angle,Invalid angle)
-Center      (    1464.000,    -978.000) (Invalid angle,Invalid angle)```
+Center      (    1464.000,    -978.000) (Invalid angle,Invalid angle)
+```
 
 Terdapat invalid angle, inilah yang menjadi alasan kenapa file '.tif' tidak bisa dibuka via ArcGis / Tile Layer.
 
