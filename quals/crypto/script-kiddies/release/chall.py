@@ -6,7 +6,7 @@ from zlib import crc32
 import hashlib
 import os
 
-FLAG = f'ARA6{{{bytes_to_long(os.urandom(16))}}}'.encode()
+FLAG = b'ajdnkandkajsndkasndkandkandkandkandak'
 KEY = token_bytes(32)
 
 def verification(key,data):
