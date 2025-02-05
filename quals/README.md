@@ -10,7 +10,7 @@
 | ............................. | ................... | Easy       | Pwn      |
 | メンター先輩、結婚してください！！！ | mirai               | Easy       | Pwn      |
 | That Day I Got Reincarnated to Window's Isekai as Yet Another BabyPwn Challenge | [__hygge](https://github.com/HyggeHalcyon) | Medium     | Pwn      |
-| ............................. | ................... | Medium     | Pwn      |
+| That Day I Got Reincarnated to Window's Isekai as Yet Another Overpowered Hunter Gatherer Harem Main Character | [__hygge](https://github.com/HyggeHalcyon) | Hard     | Pwn      |
 | IDK                           | idzoyy              | Easy       | Crypto   |
 | currently in a relationship (nope) | etern1tydark   | Hard       | Crypto   |
 | script-kiddies                | idzoyy              | Medium     | Crypto   |
