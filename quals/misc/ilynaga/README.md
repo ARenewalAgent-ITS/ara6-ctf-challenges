@@ -10,7 +10,7 @@ Hard
 
 ## Description
 
-My beloved agent Naga is trying infiltrate Jerry's Biometrically-secured dewaweb VPS! Help him bypass Jerry's face recognition system!
+My beloved agent Naga is trying to infiltrate Jerry's Biometrically-secured dewaweb VPS! Help him bypass Jerry's face recognition system!
 
 https://huggingface.co/spaces/spuun/ilynaga
 
