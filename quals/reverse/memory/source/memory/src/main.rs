@@ -56,5 +56,10 @@ fn main() {
 		return no();
 	}
 
+	// `input` includes '\n'
+	if (input.len()+1) != 67 {
+		return no();
+	}
+
 	yes()
 }
