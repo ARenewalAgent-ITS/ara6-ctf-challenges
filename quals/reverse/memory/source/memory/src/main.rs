@@ -56,7 +56,7 @@ fn main() {
 		return no();
 	}
 
-	// `input` includes '\n'
+	// We pop the last character '}' previously, so we adding one here
 	if (input.len()+1) != 67 {
 		return no();
 	}
