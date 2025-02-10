@@ -1,33 +1,371 @@
 # memory POC
 
-1. Buka `memory` di binaryninja
-![image](https://github.com/user-attachments/assets/93b08f2d-1209-4001-9d9c-a70d9789946e)
-2. Masuk ke fungsi `memory::main::*`
-![image](https://github.com/user-attachments/assets/b8e8335c-cbd3-40b3-b1f5-54a9b152f1bd)
-3. Pengecekan pertama adalah flag dimulai dengan substring `ARA6{`
-![image](https://github.com/user-attachments/assets/bbb67815-58ff-4305-bfa6-2e70e0dbd882)
-![image](https://github.com/user-attachments/assets/062ad29d-242e-4b74-9fae-befc5b90c40f)
-Mohon diingat bahwa fungsi `memory::no::*` dipanggil ketika user-input salah. Maka, ada baiknya kita cari syarat-syarat yang harus dipenuhi agar fungsi tersebut tidak dipanggil.
-5. Pengencekan dalam loop dipenuhi oleh proses casting yang bertujuan untuk mempersulit proses reverse engineering.
+POC updated to `memory-v2` binary.
 
-Decompilation | Tidy-Up | Source Code
--- | -- | --
-![image](https://github.com/user-attachments/assets/65c9de81-ec97-4ac7-8f7d-56b74e8ed2e2) | | ![image](https://github.com/user-attachments/assets/06da38a7-54d2-47a7-8d66-42aed051b2a3)
-![image](https://github.com/user-attachments/assets/f1efd01b-e5a7-40c1-a6a4-27662f0a5ce7) | ![image](https://github.com/user-attachments/assets/3f6c026d-138a-4c50-aa9c-e4ec89fbf131) | 
-![image](https://github.com/user-attachments/assets/65b7f936-175b-42db-8f9b-0c804ab72d8e) | ![image](https://github.com/user-attachments/assets/1fa3241c-df8e-416c-b481-06f1e5baee67) | ![image](https://github.com/user-attachments/assets/3c88587f-ff63-4a8a-85ed-5f3e1d3a06ce)
-![image](https://github.com/user-attachments/assets/0208843d-1eb8-43d8-992c-83597c2cacc6) | ![image](https://github.com/user-attachments/assets/a8cc1ea6-2a01-4df9-8730-4db879d586fa) | ![image](https://github.com/user-attachments/assets/426c27ff-67f2-47b2-b71d-28e5b523dde3)
+1. Terdapat binary Rust. Pertama, temukan fungsi dalam scope `memory` bernama `main`
+![image](https://github.com/user-attachments/assets/33d04b63-d27c-4f95-bf8d-25d699e8561b)
 
+2. Saat kita graphing fungsi `main`, terdapat 1 loop dengan 1 nested-loop
+![image](https://github.com/user-attachments/assets/5d6943c6-031f-425d-8f25-f82958ff3733)
 
-Saran bagi para peserta adalah untuk merunut sumber value dari suatu variabel yang menarik secara sistematis. Bermulai pada akhir penggunaan variabel tersebut, hingga pertama kali sumber value dari variabel tersebut muncul.
+3. Siapkan scaffolding dari flow programnya
+![image](https://github.com/user-attachments/assets/57d5941b-a258-4e93-8a01-0d768cfeb964)
 
-Jika stuck, gunakan debugger untuk melakukan dynamic analysis.
+4. Pada Rust binary decompilation di Ghidra, berikut beberapa perbedaan essensial dengan source codenya:
+<table>
+  <tr>
+    <td>Decompilation</td>
+    <td>Source Code</td>
+  </tr>
+  <tr>
+  <td>
 
-6. Yang terakhir, ada pengecekan huruf terakhir yang dapat dengan mudah dianalisis
-![image](https://github.com/user-attachments/assets/1ac428e0-a0ac-45de-96d2-09c56788bed5)
+![image](https://github.com/user-attachments/assets/fe4816d8-363c-4dc8-9fe5-31e6f9a945bc)
 
-Before | After
--- | --
-![image](https://github.com/user-attachments/assets/5403e767-cf04-447a-b42b-7cede3dbe078) | ![image](https://github.com/user-attachments/assets/2a382ffc-b449-4703-b528-6e3ec84f292b)
+  </td>
+  <td>
 
+```rust
+println!("Hello...");
+```
+
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+![image](https://github.com/user-attachments/assets/42207ae6-a601-499b-a248-d9f0e57af65e)
+    
+  </td>
+  <td>
+
+```rust
+let mut input = String::new();
+```
+    
+  </td>
+  </tr>
+</table>
+
+5. Berikut transpilasi dari C++ pseudocode menjadi Python
+<table>
+  <tr>
+    <td>Pseudocode</td>
+    <td>Python</td>
+  </tr>
+  <tr>
+  <td>
+
+```c++
+std::io::stdio::stdin();
+std::io::stdio::Stdin::read_line();
+core::ptr::drop_in_place<>(&local_90);
+alloc::string::String::pop(&local_e0);
+```
+      
+  </td>
+  <td>
+
+```python
+local_90 = input()[:-1]
+```
+    
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+```c++
+&Var6 = alloc::string::deref(&local_e0);
+pat.length = 4;
+pat.data_ptr = &DAT_0014b310;
+bVar1 = core::str::starts_with<&str>(&Var6,pat);
+```
+      
+  </td>
+  <td>
+
+```python
+pat = "ARA6"
+# Pelajari sistem ownership Rust untuk tahu kenapa `local_90` bukan `local_e0`
+# dan karena ini Python, kita pakainya `local_90`
+bVar1 = local_90.startswith(pat)
+```
+    
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+```c++
+if (((bVar1 ^ 0xffU) & 1) == 0) {
+  &Var6 = alloc::string::deref(&local_e0);
+  local_70 = (Iter<u8>)core::str::chars(&Var6);
+  local_74 = core::iter::traits::iterator::Iterator::nth<>((Chars *)&local_70,4);
+  bVar1 = core::option::eq<char>(&local_74,(Option<char> *)&DAT_0014b314);
+```
+      
+  </td>
+  <td>
+
+```python
+if bVar:
+  bVar1 = local_90[4] == '}'
+```
+    
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+```c++
+if (((bVar1 ^ 0xffU) & 1) == 0) {
+  local_5c = 5;
+  local_56 = 0;
+  bVar5 = local_56;
+  do {
+    local_56 = bVar5;
+    local_55 = 0;
+
+    // ...
+
+    bVar5 = local_56 + 1;
+    if (0xfe < local_56) {
+                /* WARNING: Subroutine does not return */
+      core::panicking::panic_const::panic_const_add_overflow();
+    }
+  } while( true );
+}
+```
+      
+  </td>
+  <td>
+
+```python
+if bVar1:
+  local_5c = 5
+  local_56 = 0
+  while True:
+    local_55 = 0
+    # ...
+    local_56 += 1
+
+    # nested-labelled-loop in Rust
+    if breakToEnd:
+      break
+```
+    
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+```c++
+while (true) {
+  if (CARRY1(local_56,local_55) != false) {
+            /* WARNING: Subroutine does not return */
+    core::panicking::panic_const::panic_const_add_overflow();
+  }
+  bVar5 = (byte)(local_56 + local_55) % 0x1a;
+  OVar2._0_1_ = bVar5 + 0x40;
+  if (0xbf < bVar5) {
+            /* WARNING: Subroutine does not return */
+    core::panicking::panic_const::panic_const_add_overflow();
+  }
+  OVar2._1_3_ = 0;
+  local_25 = OVar2._0_1_;
+  local_24 = OVar2;
+  &Var6 = alloc::string::deref(&local_e0);
+  IVar7 = (Iter<u8>)core::str::chars(&Var6);
+  local_50 = IVar7;
+  local_54 = core::iter::traits::iterator::Iterator::nth<>
+                        ((Chars *)&local_50,(ulong)local_5c);
+  local_40 = OVar2;
+  bVar1 = core::cmp::PartialEq::ne<>(&local_54,&local_40);
+  if (bVar1) {
+    no();
+    goto LAB_00109655;
+  }
+  bVar5 = local_55 + 1;
+  if (0xfe < local_55) {
+            /* WARNING: Subroutine does not return */
+    core::panicking::panic_const::panic_const_add_overflow();
+  }
+  uVar3 = local_5c + 1;
+  local_55 = bVar5;
+  if (0xfffffffe < local_5c) {
+            /* WARNING: Subroutine does not return */
+    core::panicking::panic_const::panic_const_add_overflow();
+  }
+  local_5c = uVar3;
+  if (bVar5 == 0xf) break;
+  if (local_56 == 4) {
+    // ..
+  }
+}
+
+LAB_00109655:
+  core::ptr::drop_in_place<>(&local_e0);
+  return;
+```
+      
+  </td>
+  <td>
+
+```python
+while True:
+  bVar5 = (local_56 + local_55) % 0x1a
+  bVar5 += 0x40
+  # atau:
+  # bVar5 -= 1
+  # bVar5 += ord('A')
+  
+  if ord(local_90[local_5c]) != bVar5:
+    no()
+    break
+  
+  # bukan bVar5 kecuali jika bVar5 = local_55 + 1
+  local_5c += 1
+  local_55 += 1
+
+  if local_55 == 15:
+    break
+  if local_56 == 4:
+    breakToEnd = True
+    break
+```
+    
+  </td>
+  </tr>
+  <tr>
+  <td>
+
+```c++
+local_3c[0] = alloc::string::String::pop(&local_e0);
+bVar1 = core::option::eq<char>(local_3c,(Option<char> *)&DAT_0014b318);
+if (((bVar1 ^ 0xffU) & 1) == 0) {
+  uVar4 = alloc::string::String::len(&local_e0);
+  if (0xfffffffffffffffe < uVar4) {
+        /* WARNING: Subroutine does not return */
+    core::panicking::panic_const::panic_const_add_overflow();
+  }
+  if (uVar4 == 0x42) {
+    yes();
+    core::ptr::drop_in_place<>(&local_e0);
+    return;
+  }
+  no();
+}
+else {
+  no();
+}
+goto LAB_00109655;
+```
+      
+  </td>
+  <td>
+
+```python
+ender = local_90.pop()
+if ender == '}':
+  if len(local_90) == 66:
+    yes()
+    exit()
+  else:
+    no()
+else:
+  no()
+```
+    
+  </td>
+  </tr>
+</table>
+
+```python
+# Pelengkap
+def yes():
+  print("Nice")
+  exit()
+
+def no():
+  print("No")
+  exit()
+
+######################################################################################
+local_90 = input()[:-1]
+
+pat = "ARA6"
+# Pelajari sistem ownership Rust untuk tahu kenapa `local_90` bukan `local_e0`
+# dan karena ini Python, kita pakainya `local_90`
+bVar1 = local_90.startswith(pat)
+
+if bVar:
+  bVar1 = local_90[4] == '}'
+
+if bVar1:
+  local_5c = 5
+  local_56 = 0
+  while True:
+    local_55 = 0
+    
+    while True:
+      bVar5 = (local_56 + local_55) % 0x1a
+      bVar5 += 0x40
+      # atau:
+      # bVar5 -= 1
+      # bVar5 += ord('A')
+      
+      if ord(local_90[local_5c]) != bVar5:
+        no()
+        break
+      
+      # bukan bVar5 kecuali jika bVar5 = local_55 + 1
+      local_5c += 1
+      local_55 += 1
+
+      if local_55 == 15:
+        break
+      if local_56 == 4:
+        breakToEnd = True
+        break
+
+    local_56 += 1
+
+    # nested-labelled-loop in Rust
+    if breakToEnd:
+      break
+
+ender = local_90.pop()
+if ender == '}':
+  if len(local_90) == 66:
+    yes()
+  else:
+    no()
+else:
+  no()
+```
+
+6. Solver
+```python
+flag = "ARA6{"
+
+i = 0
+brekall = False
+while not brekall:
+  j = 0
+  while True:
+    builder = 0x40 + ((i + j) % 0x1a)
+    flag += chr(builder)
+    j += 1
+    if j == 15:
+      break
+    if i == 4:
+      brekall = True
+      break
+  i += 1
+
+flag += '}'
+print(flag)
+```
 
 Flag: `ARA6{@ABCDEFGHIJKLMNABCDEFGHIJKLMNOBCDEFGHIJKLMNOPCDEFGHIJKLMNOPQD}`
