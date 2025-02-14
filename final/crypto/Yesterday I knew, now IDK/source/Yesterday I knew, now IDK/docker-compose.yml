@@ -4,4 +4,4 @@ services:
     build: .
     restart: always
     ports:
-      - "5500:5500"
+      - "7331:7331"

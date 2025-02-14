@@ -11,7 +11,9 @@ hard?
 ## Description
 
 I think I make a bad generator so it takes a little more time, this seems annoying for someone who wants to leak my flag. I have prepared a place for you to prove it
-notes: try reconnecting if there is no response around 10s
+- Just basic challenge for u?, It's just that I want you to think more
+- Your input will not be encrypted so it never be read again
+- You'll solve this quickly?, so have fun
 
 ## Flag
 

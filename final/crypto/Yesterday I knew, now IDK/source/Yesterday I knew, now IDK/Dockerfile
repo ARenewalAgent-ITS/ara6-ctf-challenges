@@ -12,4 +12,4 @@ WORKDIR /app
 
 COPY ./src/* ./
 
-CMD socat TCP-LISTEN:5500,reuseaddr,fork EXEC:"sage -python -u /app/chall.py"
+CMD socat TCP-LISTEN:7331,reuseaddr,fork EXEC:"sage -python -u /app/chall.py"
