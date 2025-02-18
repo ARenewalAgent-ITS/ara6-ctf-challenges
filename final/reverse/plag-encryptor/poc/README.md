@@ -1,4 +1,4 @@
-# Kena Sial Karena Sang Naga 
+# Plag Encryptor
 
 Author: jjcho
 
