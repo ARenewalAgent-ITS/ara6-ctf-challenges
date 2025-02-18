@@ -13,6 +13,8 @@ Hard
 Noooo!! Server kita matii!! 
 Seorang manager di sebuah perusahaan IT mendapatkan tugas untuk mencari tahu kenapa server di perusahaannya tiba tiba mati. Oleh karena itu dia mencapture memory untuk dianalisis dan menaruh memory di laptop pribadinya. Ternyata hari ini adalah hari sialnya, tiba tiba laptopnya terkena serangan malware. Dapatkah anda membantu dia? 
 
+zip pass: `IniPasswordChallForensicFinalAra6`
+
 ## Flag
 
 ```
