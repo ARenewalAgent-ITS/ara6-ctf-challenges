@@ -82,15 +82,6 @@ const usuarioCreateNote = async(req,res) => {
     res.render("usuarioCreateNote");
 }
 
-const usuarioNoteSuccessScript = async(req,res) => {
-    const script = `
-    function report(){
-        alert("Data SuccessFully Spawned");
-    }
-    `;
-    return res.status(200).set('Content-Type','text/javascript').send(script);
-}
-
 const visitUsuarioNote = async(req,res) => {
     const note = req.query;
     const bot_url = "http://bot:3000/visit_usuario";
@@ -100,7 +91,7 @@ const visitUsuarioNote = async(req,res) => {
         headers: {'Content-Type': 'application/json'}
     }).then((response) => {
         if(response.status === 200){
-            return res.status(200).json({message: "success"});
+            return res.status(200).json({message: "Secretaria visit usuario note"});
         }
     }).catch((err) => {
         console.log(err);
@@ -117,7 +108,7 @@ const visitSecretariaNote = async(req,res) => {
         headers: {'Content-Type': 'application/json'}
     }).then((response) => {
         if(response.status === 200){
-            return res.status(200).json({message: "success"});
+            return res.status(200).json({message: "El Presidente visit secretaria note"});
         }
     }).catch((err) => {
         console.log(err);
@@ -147,7 +138,6 @@ module.exports = {
     getNotesByUserSecretariaUUID,
     usuarioNoteIndex,
     createNotes,
-    usuarioNoteSuccessScript,
     usuarioCreateNote,
     checkSecretariaNote,
     visitUsuarioNote,

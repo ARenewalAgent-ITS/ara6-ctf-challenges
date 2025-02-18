@@ -16,7 +16,7 @@ document.querySelector("form").addEventListener("submit", async function (e) {
             }),
         }).then((response) => {
             if(response.status == 200){
-                window.location.href = "/note";
+                window.location.href = "/usuario/notes";
             }else{
                 throw new Error(response.message);
             }

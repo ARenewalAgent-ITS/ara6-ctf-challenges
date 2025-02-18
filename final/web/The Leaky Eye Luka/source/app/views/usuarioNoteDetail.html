@@ -87,13 +87,12 @@
             noteBlock.innerHTML = sanitizedContent;
             const successScript = document.createElement("script");
             try{
-                if(window.isClean.isSafe.isSanitized) {
+                if(window.abortError.stack.stackTrace) {
                     successScript.src = "./js/success.js";
                     successScript.onload = () => report();
                 }
             }catch{
-                successScript.src = "/js/success.js";
-                successScript.onload = () => report();
+                alert("Data SuccessFully Spawned");
             }
             document.head.appendChild(successScript);
         }

