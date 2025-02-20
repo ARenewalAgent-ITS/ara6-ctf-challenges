@@ -1,10 +1,13 @@
-import hashlib, random
+import hashlib, random, uuid
 
 DIFFICULTY = 6
-rand = random.randint(100000, 10000000000000000)
-for i in range(rand, 10000000000000000):
-	hashed = hashlib.sha256(str(i).encode()).hexdigest()
+myid = uuid.uuid4().hex
+i = 0
+while True:
+	code = myid + '-' + str(i)
+	hashed = hashlib.sha256(code.encode()).hexdigest()
 	hashed = hashlib.sha256(hashed.encode()).hexdigest()
 	if hashed.startswith('0' * DIFFICULTY):
-		print(i)
+		print(code)
 		break
+	i += 1
