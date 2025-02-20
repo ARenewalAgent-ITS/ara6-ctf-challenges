@@ -15,4 +15,4 @@
 | Kena Sial Karena Sang Naga    | Haalloobim          | Hard       | Forensic |
 | File PCAP Sederhana           | daff112             | Hard       | Forensic |
 | audit                         | thehxnz             | Hard       | Misc     |
-| ............................. | ................... | Hard       | Misc     |
+| mwsamanaga                    | kek.c               | Hard       | Misc     |
