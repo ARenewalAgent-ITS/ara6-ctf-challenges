@@ -11,6 +11,7 @@ Hard
 ## Description
 
 An upcoming AI startup lab named NagAI labs got one of their dev's model, notes, and code leaked!
+![skrinshot](https://files.catbox.moe/0umoeh.jpg)
 
 ## Flag
 ```
