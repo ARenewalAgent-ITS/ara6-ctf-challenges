@@ -26,7 +26,7 @@ def derive_key(shared_secret, salt, length):
 
 bytetext = plaintext.encode("utf-8")
 
-cipher_len = len(bytetext) # Should be 22
+cipher_len = len(bytetext) # This is 25 for our thing, the pt was 25, at least
 key_salt = b'salting'
 shared_private_key = derive_key(shared_secret, key_salt, cipher_len)
 assert len(bytetext) == cipher_len
