@@ -4,13 +4,13 @@
 
 | Name                                       | Author              | Difficulty | Category |
 | ------------------------------------------ | ------------------- | ---------- | -------- |
-| .............................              | ................... | Hard       | Web      |
+| The Leaky Eye Luka                         | Djumanto            | Hard       | Web      |
 | Belugainfo feedback                        | abdiery             | Hard       | Web      |
-| 世界一かわいいエリシアと過ごす特別な一日 ♡        | mirai               | Hard       | Pwn      |
+| 世界一かわいいエリシアと過ごす特別な一日 ♡    | mirai               | Hard       | Pwn      |
 | .............................              | ................... | Hard       | Pwn      |
 | Yesterday I knew, now IDK                  | idzoyy              | Hard       | Crypto   |
 | a2s :3c                                    | Etern1ty            | Hard       | Crypto   |
-| .............................              | ................... | Hard       | Reverse  |
+| plag-encryptor                             | jjcho               | Hard       | Reverse  |
 | .............................              | ................... | Hard       | Reverse  |
 | Kena Sial Karena Sang Naga                 | Haalloobim          | Hard       | Forensic |
 | File PCAP Sederhana                        | daff112             | Hard       | Forensic |
